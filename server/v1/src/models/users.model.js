@@ -7,8 +7,10 @@ const {
 } = require("../utils/dbFunctions");
 let tableName = "users";
 
-const addUser = async (data) => {
-  const result = await insert(tableName, data);
+const addUser = async (data, profileUrl) => {
+  let id = Date.now();
+  const finalData = { ...data, profileUrl, id };
+  const result = await insert(tableName, finalData);
   return result;
 };
 
