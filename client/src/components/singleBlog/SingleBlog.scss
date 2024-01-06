@@ -1,0 +1,124 @@
+#single-blog {
+  header {
+    width: 100%;
+    height: 40vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .content {
+    padding: 2vw 6vw;
+    .heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h1 {
+        font-family: "poppinsMedium";
+        font-size: 5vw;
+        padding: 2vw 0;
+        display: flex;
+        flex-direction: column;
+        span {
+          font-size: 1.3vw;
+          font-family: "poppinsRegular" !important;
+          color: gray;
+          margin-top: -1vw;
+        }
+      }
+      .links {
+        display: flex;
+        .icon {
+          // padding: 0 1vw;
+          margin: 0 0.5vw;
+          font-size: 2.5vw;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+        .like {
+          color: red;
+        }
+        .icon:hover {
+          transform: scale(1.08);
+        }
+      }
+    }
+    p {
+      text-align: justify;
+      line-height: 3vw;
+      font-size: 1.3vw;
+      font-family: "poppinsRegular";
+    }
+  }
+  .comment {
+    padding: 1vw 6vw;
+    header {
+      h1 {
+        font-family: "poppinsMedium";
+        font-size: 5vw;
+      }
+      height: fit-content;
+      padding: 2vw 0;
+    }
+    .input {
+      display: flex;
+      align-items: flex-end;
+
+      textarea {
+        resize: none;
+        width: 65vw;
+        border-radius: 2vw;
+        border: none;
+        background-color: #d7d7d7;
+        font-size: 1.2vw;
+        font-family: "poppinsRegular";
+        padding: 1.2vw;
+        height: 15vw;
+      }
+      textarea:focus {
+        border: none;
+        outline: none;
+      }
+      button {
+        margin-left: 1.5vw;
+        margin-bottom: 0.6vw;
+      }
+    }
+  }
+  .comment-data {
+    // padding: 0vw 6vw;
+
+    .card {
+      width: fit-content;
+      min-width: 30vw;
+      max-width: 80vw;
+      background-color: rgb(209, 209, 209);
+      padding: 1.3vw 1.5vw;
+      color: black;
+      margin: 2vw 0;
+      border-radius: 1.2vw;
+      p {
+        font-family: "poppinsRegular";
+        font-size: 1.5vw;
+      }
+      .bottom-content {
+        padding-top: 1vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .row {
+          display: flex;
+          align-items: center;
+          p {
+            font-family: "poppinsRegular";
+            font-size: 1vw;
+          }
+          h1{
+            font-family: 'senMedium';
+            font-size: 1.2vw;
+            padding: 0 0.3vw;
+          }
+        }
+      }
+    }
+  }
+}
