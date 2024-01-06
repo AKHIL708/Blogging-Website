@@ -121,8 +121,8 @@ function Home() {
                           <p>Body</p>
                           <span>:</span>
                           <h1>
-                            {data.body.length > 10
-                              ? data.body.substring(0, 20) + "..."
+                            {data.body.length > 25
+                              ? data.body.substring(0, 50) + "..."
                               : data.body}
                           </h1>
                         </div>

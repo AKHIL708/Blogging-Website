@@ -1,5 +1,34 @@
 #single-blog {
+  padding: 2vw 14vw;
   header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 0;
+    .author {
+      display: flex;
+      align-items: flex-end;
+      h1 {
+        font-size: 3vw;
+        font-family: "senMedium";
+        padding-left: 1.2vw;
+      }
+      .author-img {
+        width: 5vw;
+        height: 5vw;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .author-img:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  .blogImage {
     width: 100%;
     height: 40vw;
     background-repeat: no-repeat;
@@ -7,7 +36,7 @@
     background-size: cover;
   }
   .content {
-    padding: 2vw 6vw;
+    padding: 2vw 0vw;
     .heading {
       display: flex;
       align-items: center;
@@ -50,7 +79,7 @@
     }
   }
   .comment {
-    padding: 1vw 6vw;
+    padding: 1vw 0vw;
     header {
       h1 {
         font-family: "poppinsMedium";
@@ -80,7 +109,9 @@
       }
       button {
         margin-left: 1.5vw;
+        width: 15vw;
         margin-bottom: 0.6vw;
+
       }
     }
   }
@@ -112,8 +143,8 @@
             font-family: "poppinsRegular";
             font-size: 1vw;
           }
-          h1{
-            font-family: 'senMedium';
+          h1 {
+            font-family: "senMedium";
             font-size: 1.2vw;
             padding: 0 0.3vw;
           }

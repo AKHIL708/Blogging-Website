@@ -43,13 +43,49 @@ function SingleBlog() {
     setInputCommentVal("");
   };
 
-  const handleSave = () =>{
+  const handleSave = () => {
     if (isSave) {
-        setIsSave(false);
-      } else {
-        setIsSave(true);
-      }
-  }
+      setIsSave(false);
+    } else {
+      setIsSave(true);
+    }
+  };
+
+  const fetchData = async () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify([
+      {
+        column: "email",
+        value: "mounika@mounika.com",
+      },
+      {
+        column: "password",
+        value: "mounika",
+      },
+    ]);
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    let result = await fetch(
+      "http://localhost:4000/v1/users/login",
+      requestOptions
+    );
+    if (!result.ok) {
+      const error = await result.text();
+      console.log(error);
+      return;
+    }
+
+    const data = await result.json();
+    console.log(data);
+  };
 
   useEffect(() => {
     setBlog({
@@ -60,6 +96,7 @@ function SingleBlog() {
       title: "books bolthe",
       body: "hello from everyone the best boks you can read after soo ogn asldfkhasdf asldfhasdfl asldkf",
       category: "books",
+      postedOn: "dec 15th 2023",
     });
     setPostComment([
       {
@@ -87,14 +124,31 @@ function SingleBlog() {
         comment: "asdfasdfasdf asdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
       },
     ]);
+    fetchData();
   }, []);
+
   return (
     <section id="single-blog">
-      <header style={{ backgroundImage: `url(${img})` }}></header>
+      <header>
+        <div className="author">
+          <div
+            className="author-img"
+            title="show profile"
+            style={{ backgroundImage: `url(${img})` }}
+          ></div>
+          <h1>Akhil Nayak</h1>
+        </div>
+        <button>Follow</button>
+      </header>
+      <div
+        className="blogImage"
+        style={{ backgroundImage: `url(${img})` }}
+      ></div>
       <div className="content">
         <div className="heading">
           <h1>
-            Books Bolthe <span>Author : Akhil</span>
+            {/* Books Bolthe <span>posted on : {blog.postedOn}</span> */}
+            Books Bolthe <span>posted on : fetch data</span>
           </h1>
           <div className="links">
             {!isLike ? (
@@ -124,7 +178,7 @@ function SingleBlog() {
               </div>
             ) : (
               <div className="icon" onClick={() => handleSave()}>
-                <BookmarkRoundedIcon className="icon"  />
+                <BookmarkRoundedIcon className="icon" />
               </div>
             )}
           </div>

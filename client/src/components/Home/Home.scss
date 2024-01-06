@@ -1,4 +1,5 @@
 #Home {
+  // padding: 0vw 12vw;
   header {
     background-color: black;
     // border: 1px solid black;
@@ -27,20 +28,21 @@
       align-items: center;
       flex-wrap: wrap;
       justify-content: space-around;
+      padding: 3vw 0;
       .card {
         // border: 1px solid black;
-        position: relative;
         transition: all 0.2s ease;
-        bottom: 0;
-        width: 28vw;
-        margin: 2.5vw 0;
+        width: 75vw;
+        margin: 1vw 0;
         cursor: pointer;
         border-radius: 2vw;
+        display: flex;
+        box-shadow: 10px 10px 50px -28px rgba(0, 0, 0, 0.51);
         overflow: hidden;
 
         .blog-img {
-          height: 20vw;
-          width: 100%;
+          height: 18vw;
+          width: 20vw;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -49,11 +51,13 @@
           display: flex;
           align-items: flex-start;
           flex-direction: column;
+          justify-content: space-around;
           padding: 1vw 1vw;
+          padding-left: 2vw;
           .row {
             display: flex;
             align-items: center;
-            padding: 0.6vw 0;
+            // padding: 0.2vw 0;
             p {
               font-family: "senBold";
               width: 10vw;
@@ -64,8 +68,8 @@
               font-family: "poppinsRegular";
             }
             h1 {
-              font-family: "poppinsRegular";
-              font-size: 1.2vw;
+              font-family: "senRegular";
+              font-size: 1.4vw;
               color: gray;
             }
           }
@@ -73,7 +77,7 @@
       }
       .card:hover {
         box-shadow: 10px 10px 100px -28px rgba(0, 0, 0, 0.51);
-        bottom: 2vw;
+        transform: scale(1.04);
       }
     }
   }
